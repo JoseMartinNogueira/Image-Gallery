@@ -9,6 +9,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -44,7 +46,15 @@ public class RetrieveData  {
 
             @Override
             public void onResponse(JSONObject response) {
+                try {
 
+                    JSONArray jsonArray = response.getJSONArray("results");
+
+                    
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         },
         new Response.ErrorListener() {
