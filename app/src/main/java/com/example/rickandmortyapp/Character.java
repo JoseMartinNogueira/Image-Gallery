@@ -1,5 +1,7 @@
 package com.example.rickandmortyapp;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +45,7 @@ public class Character implements Modelo {
         }
         ownURL = jsonObject.getString("url");
         created = jsonObject.getString("created");
+        Log.d("ARRAY", name);
 
     }
 }
