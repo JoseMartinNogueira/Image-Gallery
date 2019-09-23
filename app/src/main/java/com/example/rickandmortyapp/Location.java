@@ -1,8 +1,33 @@
 package com.example.rickandmortyapp;
 
-public class Location implements Modelo {
-    @Override
-    public void JsonToModel() {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+public class Location implements Modelo {
+
+    private int id;
+    private String name;
+    private String type;
+    private String dimension;
+    private ArrayList<String> residents;
+    private String ownURL;
+    private String created;
+
+    @Override
+    public void JsonToModel(JSONObject jsonObject) throws JSONException {
+        id = jsonObject.getInt("id");
+        name = jsonObject.getString("name");
+        type = jsonObject.getString("type");
+        dimension = jsonObject.getString("dimension");
+        residents = new ArrayList<>();
+        JSONArray jsonArray = jsonObject.getJSONArray("residents");
+        for( int i = 0; i <jsonArray.length(); ++i) {
+            residents.add(jsonArray.getString(i));
+        }
+        ownURL = jsonObject.getString("url");
+        created = jsonObject.getString("created");
     }
 }
