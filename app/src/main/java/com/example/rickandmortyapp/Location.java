@@ -40,4 +40,24 @@ public class Location implements Modelo {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String getStatus() {
+        return null;
+    }
+
+    @Override
+    public String getSpecies() {
+        return null;
+    }
+
+    @Override
+    public String getType() {
+        return null;
+    }
+
+    @Override
+    public String getGender() {
+        return null;
+    }
 }

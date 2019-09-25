@@ -11,4 +11,12 @@ public interface Modelo {
 
     public String getName();
 
+    public String getStatus();
+
+    public String getSpecies();
+
+    public String getType();
+
+    public String getGender();
+
 }

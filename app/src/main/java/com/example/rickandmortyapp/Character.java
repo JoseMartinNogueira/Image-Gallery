@@ -45,7 +45,7 @@ public class Character implements Modelo {
         }
         ownURL = jsonObject.getString("url");
         created = jsonObject.getString("created");
-        Log.d("ARRAY", name);
+
 
     }
 
@@ -57,5 +57,25 @@ public class Character implements Modelo {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getStatus() {
+        return status;
+    }
+
+    @Override
+    public String getSpecies() {
+        return species;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public String getGender() {
+        return gender;
     }
 }
