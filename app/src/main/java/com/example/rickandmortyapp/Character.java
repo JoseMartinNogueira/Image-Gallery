@@ -48,4 +48,14 @@ public class Character implements Modelo {
         Log.d("ARRAY", name);
 
     }
+
+    @Override
+    public String getImageURL() {
+        return image;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

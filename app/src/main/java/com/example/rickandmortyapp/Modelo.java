@@ -7,4 +7,8 @@ public interface Modelo {
 
     public void JsonToModel(JSONObject jsonObject) throws JSONException;
 
+    public String getImageURL();
+
+    public String getName();
+
 }

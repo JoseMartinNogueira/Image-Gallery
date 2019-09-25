@@ -30,4 +30,14 @@ public class Episode implements Modelo {
         url = jsonObject.getString("url");
         created = jsonObject.getString("created");
     }
+
+    @Override
+    public String getImageURL() {
+        return null;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

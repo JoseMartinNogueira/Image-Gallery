@@ -1,6 +1,8 @@
 package com.example.rickandmortyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -28,15 +30,17 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private ArrayList<Modelo> modelList;
 
+    private RecyclerView recyclerView;
+    private Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        String url ="https://rickandmortyapi.com/api/";
-
-        TextView textView = (TextView) findViewById(R.id.textView);
+        recyclerView = findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         compURL = "character";
         modelList = new ArrayList<>();
@@ -66,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
                                 Modelo model = ModelFactory.getModel(compURL);
                                 model.JsonToModel(jsonObject);
                                 modelList.add(model);
+
                             }
+                            adapter = new Adapter(MainActivity.this, modelList);
+                            recyclerView.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
